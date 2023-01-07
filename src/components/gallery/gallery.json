@@ -1,0 +1,32 @@
+[
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/gallery/first.jpg",
+    "id": "1",
+    "alt": "Cooper arch"
+  },
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/gallery/second.jpg",
+    "id": "2",
+    "alt": "Cooper arch"
+  },
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/gallery/third.jpeg",
+    "id": "3",
+    "alt": "Macrame with wooden  arch"
+  },
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/gallery/sixth.jpg",
+    "id": "4",
+    "alt": "Boho teepr"
+  },
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/gallery/seventh.jpg",
+    "id": "5",
+    "alt": "Open arms cooper arch"
+  },
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/gallery/tenth.jpeg",
+    "id": "6",
+    "alt": "Cooper arch"
+  }
+]

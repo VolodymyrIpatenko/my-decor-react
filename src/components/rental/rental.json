@@ -1,0 +1,24 @@
+[
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/rental/first.jpg",
+    "id": "1",
+    "alt": "Open arms cooper arch",
+    "title": "Open arms cooper arch",
+    "description": "Rental rate: $100 The elegant,sleek design of this copper arch is best suited to support minimal decorations such as light greenery, or delicate floral art. 7′ 3″ H (High Side) + 5′ 5″H (Low Side) with 22″ W Base. Includes easy to follow set-up instructions, no tools required. Fits easily in most vehicles."
+  },
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/rental/second.jpg",
+    "id": "2",
+    "alt": "Cooper arch"
+  },
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/gallery/third.jpeg",
+    "id": "3",
+    "alt": "Macrame with wooden arch"
+  },
+  {
+    "photo": "https://volodymyripatenko.github.io/decor-boutique/images/rental/fourth.jpg",
+    "id": "4",
+    "alt": "Boho teepe"
+  }
+]
