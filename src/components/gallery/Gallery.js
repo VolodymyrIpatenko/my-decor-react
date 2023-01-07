@@ -5,7 +5,7 @@ import GalleryList from './Gallery.styled';
 const Photo = ({ photoGallery: { photo, alt } }) => {
   return (
     <li>
-      <img width="400" src={photo} alt={alt} />
+      <img width="400" src={photo} alt={alt} loading="lazy" />
     </li>
   );
 };

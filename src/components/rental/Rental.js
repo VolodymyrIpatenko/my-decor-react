@@ -15,7 +15,7 @@ const RentalPhoto = ({
             width="300"
             height="300"
             src={photo}
-            alt="Cooper Arch"
+            alt={alt}
             loading="lazy"
           />
           <div className="rental-collection__animation">

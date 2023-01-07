@@ -7,7 +7,7 @@ const Home = () => {
       <Main>
         <Title>
           WEDDING RENTALS AND MUCH
-          <br /> MORE!{' '}
+          <br /> MORE!
         </Title>
         <Description>
           Decor Boutique is a small family business, specialized in providing
@@ -18,7 +18,7 @@ const Home = () => {
           other pages on our website to check out our rental collection and see
           what we are up to.
         </Description>
-        <Img src={require('./main.jpg')} alt="wedding" />
+        <Img src={require('./main.jpg')} alt="wedding" loading="lazy" />
       </Main>
       <PageFooter />
     </>

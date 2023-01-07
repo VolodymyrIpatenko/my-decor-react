@@ -2,6 +2,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { Link, InstaIcon, MobileMenu } from './Header.styled';
 import { useState } from 'react';
+import { Breakpoint } from 'react-socks';
 
 export default function MobileMenuComponent() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -12,7 +13,9 @@ export default function MobileMenuComponent() {
 
   return (
     <MobileMenu>
-      <GiHamburgerMenu onClick={() => onHandleShowMenu()}></GiHamburgerMenu>
+      <Breakpoint small down>
+        <GiHamburgerMenu onClick={() => onHandleShowMenu()}></GiHamburgerMenu>
+      </Breakpoint>
       {mobileMenu ? (
         <MobileMenu>
           <Link to="/rental-collection">Rental Collection</Link>
