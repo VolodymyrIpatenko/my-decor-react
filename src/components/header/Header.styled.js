@@ -47,12 +47,13 @@ export const MobileMenu = styled.div`
 `;
 
 export const Link = styled(NavLink)`
+  padding: 8px 16px;
   position: relative;
   transition: color 550ms cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   font-size: 30px;
   color: white;
-  &:is(:hover, :focus) {
+  &:is(:hover, :active) {
     color: #2196f3;
   }
   @media screen and (max-width: 768px) {

@@ -1,6 +1,5 @@
 import { SlSocialInstagram } from 'react-icons/sl';
 import { Outlet } from 'react-router-dom';
-import './mobile.css';
 import { Header, Logo, Link, Nav, Wrap, InstaIcon } from './Header.styled';
 import MobileMenuComponent from './MobileMenu.js';
 
