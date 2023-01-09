@@ -47,11 +47,12 @@ export const MobileMenu = styled.div`
 `;
 
 export const Link = styled(NavLink)`
-  padding: 8px 16px;
+  padding: 1px 4px;
   position: relative;
   transition: color 550ms cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   font-size: 30px;
+  border-radius: 7px;
   color: white;
   &:is(:hover, :active) {
     color: #2196f3;

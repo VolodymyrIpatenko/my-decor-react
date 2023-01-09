@@ -1,6 +1,6 @@
 import PageFooter from '../footer/Footer.js';
 import React from 'react';
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
   MyForm,
@@ -49,21 +49,21 @@ const Contacts = () => (
             <h1>CONTACT US</h1>
             <label>
               <LabelText>Name</LabelText>
-              <Input required placeholder="Your name" name="name" />
+              <Input placeholder="Your name" name="name" required />
             </label>
 
             {errors.name && touched.name ? <div>{errors.name}</div> : null}
             <label>
               <LabelText>Email</LabelText>
-              <Input placeholder="Email" required name="email" type="email" />
+              <Input placeholder="Email" name="email" type="email" required />
             </label>
             {errors.email && touched.email ? <div>{errors.email}</div> : null}
             <label>
               <LabelText>Message</LabelText>
               <Textarea
                 placeholder="Feel free to contact with us"
-                required
                 name="message"
+                required
               />
             </label>
             {errors.message && touched.message ? (

@@ -18,7 +18,12 @@ export default function MobileMenuComponent() {
       </Breakpoint>
       {mobileMenu ? (
         <MobileMenu>
-          <Link to="/rental-collection">Rental Collection</Link>
+          <Link
+            className={({ isActive }) => (isActive ? 'active' : null)}
+            to="/rental-collection"
+          >
+            Rental Collection
+          </Link>
           <Link to="/gallery">Gallery</Link>
           <Link to="/contacts">Contacts</Link>
           <InstaIcon

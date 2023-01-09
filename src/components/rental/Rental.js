@@ -1,7 +1,15 @@
 import PageFooter from '../footer/Footer.js';
-import { Description, Title, Main } from 'components/home/Home.styled.js';
+import { Description, Main } from 'components/home/Home.styled.js';
 import { RentalList } from './Rental.styled';
+import Typed from 'react-typed';
 import './rental.scss';
+
+const titleStyle = {
+  marginTop: '50p',
+  fontWeight: 'bold',
+  fontSize: '32px',
+  textAlign: 'center',
+};
 
 const RentalPhoto = ({
   rentalCollection: { alt, photo, description, title },
@@ -35,7 +43,12 @@ const Rental = ({ rentalCollection }) => {
   return (
     <>
       <Main>
-        <Title>Rental Collection</Title>
+        <Typed
+          style={titleStyle}
+          strings={['Rental Collection']}
+          typeSpeed={100}
+          showCursor={false}
+        />
         <Description>
           Renting with us is easy! Contact us to see if your preferred backdrop
           is available for your
