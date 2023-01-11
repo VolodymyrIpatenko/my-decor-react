@@ -5,10 +5,10 @@ export const Header = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 20px;
   top: 0;
   padding: 30px;
+  align-items: center;
   background: #ccd0c3;
   @media (max-width: 768px) {
     display: block;
@@ -17,7 +17,6 @@ export const Header = styled.header`
 `;
 
 export const InstaIcon = styled.a`
-  position: relative;
   transition: color 550ms cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 20px;
   color: white;
@@ -48,7 +47,6 @@ export const MobileMenu = styled.div`
 
 export const Link = styled(NavLink)`
   padding: 1px 4px;
-  position: relative;
   transition: color 550ms cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   font-size: 30px;
@@ -61,22 +59,21 @@ export const Link = styled(NavLink)`
     font-size: 20px;
   }
 `;
-export const Logo = styled(Link)`
-  font-size: 30px;
-  position: relative;
-  transition: color 550ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: white;
-  font-family: 'Freestype Script';
-  @media screen and(max-width: 768px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-  } ;
-`;
 
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+`;
+
+export const Logo = styled.a`
+  transition: color 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+
+  &:is(:hover, :focus) {
+    color: #2196f3;
+  }
 `;

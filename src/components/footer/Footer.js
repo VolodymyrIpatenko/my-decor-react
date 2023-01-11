@@ -1,10 +1,10 @@
-import { Logo } from '../header/Header.styled';
 import { Footer, MailLink } from './Footer.styled';
+import { Logo } from 'components/header/Header.styled';
 
 const PageFooter = () => {
   return (
     <Footer>
-      <Logo to="/">Decor-Boutique</Logo>
+      <Logo href="/">Decor-Boutique</Logo>
       <MailLink href="mailto:decorboutiquerental@gmail.com">
         decorboutiquerental@gmail.com
       </MailLink>

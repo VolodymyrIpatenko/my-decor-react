@@ -1,6 +1,6 @@
 import { SlSocialInstagram } from 'react-icons/sl';
 import { Outlet } from 'react-router-dom';
-import { Header, Logo, Link, Nav, Wrap, InstaIcon } from './Header.styled';
+import { Header, Link, Nav, Wrap, InstaIcon, Logo } from './Header.styled';
 import MobileMenuComponent from './MobileMenu.js';
 import './header.css';
 
@@ -8,7 +8,7 @@ export const HeaderComponent = () => {
   return (
     <>
       <Header>
-        <Logo to="/">Decor-Boutique</Logo>
+        <Logo href="/">Decor-Boutique</Logo>
 
         <Wrap>
           <Nav>
