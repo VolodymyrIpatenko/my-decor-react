@@ -1,8 +1,10 @@
 import PageFooter from '../footer/Footer.js';
 import React from 'react';
+import { useState } from 'react';
+import Modal from '../modal/Modal.js';
+import '../modal/App.css';
 import emailjs from 'emailjs-com';
-import { Formik } from 'formik';
-import * as Yup from 'yup';
+import validator from 'validator';
 import {
   MyForm,
   ButtonSubmit,
@@ -18,20 +20,39 @@ const style = {
   justifyContent: 'center',
 };
 
-const SignupSchema = Yup.object().shape({
-  name: Yup.string()
-    .required('Required')
-    .min(2, 'Too Short!')
-    .max(30, 'Too Long!'),
-
-  message: Yup.string()
-    .required('Required')
-    .min(2, 'Too Short!')
-    .max(300, 'Too Long!'),
-  email: Yup.string().required('Required').email('Invalid email'),
-});
-
 const Contacts = () => {
+  const [name, setName] = useState('');
+  const [email, setEmailError] = useState('');
+  const [message, setMessage] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const validateEmail = e => {
+    const email = e.target.value;
+
+    if (validator.isEmail(email)) {
+      setEmailError('Valid Email :)');
+    } else {
+      setEmailError('Enter valid Email!');
+    }
+  };
+
+  const handleModal = () => {
+    setModalOpen(!modalOpen);
+  };
+
+  const ManageValues = e => {
+    switch (e.currentTarget.name) {
+      case 'name':
+        setName(e.currentTarget.value);
+        break;
+      case 'message':
+        setMessage(e.currentTarget.value);
+        break;
+      default:
+        throw new Error('something went wrong');
+    }
+  };
+
   function sendEmail(e) {
     e.preventDefault(); //This is important, i'm not sure why, but the email won't send without it
 
@@ -44,7 +65,9 @@ const Contacts = () => {
       )
       .then(
         result => {
-          window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
         },
         error => {
           console.log(error.text);
@@ -55,46 +78,58 @@ const Contacts = () => {
   return (
     <>
       <div style={style}>
-        <Formik
-          initialValues={{
-            name: '',
-            email: '',
-            message: '',
-          }}
-          validationSchema={SignupSchema}
-          onSubmit={values => {
-            console.log(values);
-          }}
-        >
-          {({ errors, touched }) => (
-            <MyForm onSubmit={sendEmail}>
-              <h1>CONTACT US</h1>
-              <label>
-                <LabelText>Name</LabelText>
-                <Input placeholder="Your name" name="name" required />
-              </label>
-
-              {errors.name && touched.name ? <div>{errors.name}</div> : null}
-              <label>
-                <LabelText>Email</LabelText>
-                <Input placeholder="Email" name="email" type="email" required />
-              </label>
-              {errors.email && touched.email ? <div>{errors.email}</div> : null}
-              <label>
-                <LabelText>Message</LabelText>
-                <Textarea
-                  placeholder="Feel free to contact with us"
-                  name="message"
-                  required
-                />
-              </label>
-              {errors.message && touched.message ? (
-                <div>{errors.message}</div>
-              ) : null}
-              <ButtonSubmit type="submit">Submit</ButtonSubmit>
-            </MyForm>
-          )}
-        </Formik>
+        <MyForm onSubmit={sendEmail}>
+          <h1>CONTACT US</h1>
+          <LabelText>
+            <p>Name</p>
+            <Input
+              type="text"
+              placeholder="Name"
+              onChange={ManageValues}
+              name="name"
+            />
+          </LabelText>
+          <LabelText>
+            <p>Email</p>
+            <Input
+              type="email"
+              placeholder="Email"
+              onChange={validateEmail}
+              name="email"
+            />
+            <p
+              style={{
+                fontWeight: 'bold',
+                color: 'red',
+              }}
+            >
+              {email}
+            </p>
+          </LabelText>
+          <LabelText>
+            <p>Message</p>
+            <Textarea
+              placeholder="Type your message"
+              onChange={ManageValues}
+              name="message"
+            />
+          </LabelText>
+          <ButtonSubmit
+            disabled={
+              name === '' ||
+              email === '' ||
+              message === '' ||
+              email !== 'Valid Email :)'
+                ? true
+                : false
+            }
+            type="submit"
+            onClick={handleModal}
+          >
+            Submit
+          </ButtonSubmit>
+          {modalOpen ? <Modal /> : null}
+        </MyForm>
       </div>
       <PageFooter />
     </>
