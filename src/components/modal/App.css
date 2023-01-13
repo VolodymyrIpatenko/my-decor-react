@@ -1,34 +1,25 @@
-.App {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #101315;
-}
-
 .backdrop {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: #000000e1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-content: center;
 }
 
 .modal {
-  width: clamp(50%, 700px, 90%);
-  height: min(50%, 300px);
+  width: 500px;
+  height: 400px;
   display: flex;
   flex-direction: column;
+  margin: auto;
   align-items: center;
   padding: 0 1.5rem;
   font-size: 1.2rem;
   border-radius: 1rem;
-  background-color: #ff9300;
-  margin: auto;
+  background-color: #ccd0c3;
+  color: white;
+  font-size: 22px;
 }

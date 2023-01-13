@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import Modal from '../modal/Modal.js';
 import '../modal/App.css';
+import '../modal/App.css';
 import emailjs from 'emailjs-com';
 import validator from 'validator';
 import {
@@ -14,10 +15,10 @@ import {
 } from './Contacts.styled';
 
 const style = {
-  minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  margin: '100px',
 };
 
 const Contacts = () => {
@@ -70,7 +71,7 @@ const Contacts = () => {
         result => {
           setTimeout(() => {
             window.location.reload();
-          }, 2000);
+          }, 5000);
         },
         error => {
           console.log(error.text);
