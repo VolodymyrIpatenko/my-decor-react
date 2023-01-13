@@ -12,10 +12,8 @@
 .modal {
   width: 500px;
   height: 400px;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  align-items: center;
+  display: grid;
+  place-content: center;
   padding: 0 1.5rem;
   font-size: 1.2rem;
   border-radius: 1rem;
