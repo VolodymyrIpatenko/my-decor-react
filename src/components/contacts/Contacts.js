@@ -26,6 +26,9 @@ const Contacts = () => {
   const [message, setMessage] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
+  const values =
+    name === '' || email === '' || message === '' || email !== 'Valid Email :)';
+
   const validateEmail = e => {
     const email = e.target.value;
 
@@ -54,7 +57,7 @@ const Contacts = () => {
   };
 
   function sendEmail(e) {
-    e.preventDefault(); //This is important, i'm not sure why, but the email won't send without it
+    e.preventDefault();
 
     emailjs
       .sendForm(
@@ -67,7 +70,7 @@ const Contacts = () => {
         result => {
           setTimeout(() => {
             window.location.reload();
-          }, 2000); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+          }, 2000);
         },
         error => {
           console.log(error.text);
@@ -115,18 +118,11 @@ const Contacts = () => {
             />
           </LabelText>
           <ButtonSubmit
-            disabled={
-              name === '' ||
-              email === '' ||
-              message === '' ||
-              email !== 'Valid Email :)'
-                ? true
-                : false
-            }
+            disabled={values ? true : false}
             type="submit"
             onClick={handleModal}
           >
-            Submit
+            {values ? 'Fill all the fields' : 'Submit'}
           </ButtonSubmit>
           {modalOpen ? <Modal /> : null}
         </MyForm>

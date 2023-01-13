@@ -19,18 +19,19 @@ export const ButtonSubmit = styled.button`
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
+  font-size: 18px;
   border: none;
-  color: white;
+  color: black;
   cursor: pointer;
-  background-color: #f6ad8d;
-  :hover {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 0, 1) 0%,
-      rgba(0, 118, 212, 1) 100%,
-      rgba(238, 130, 238, 1) 100%
-    );
-  }
+  background-color: linear-gradient(
+    90deg,
+    rgba(197, 197, 141, 1) 46%,
+    rgba(147, 173, 177, 1) 100%,
+    rgba(238, 130, 238, 1) 100%
+  );
+  box-shadow: 0px 11px 35px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 11px 35px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 35px 0px rgba(0, 0, 0, 0.75);
 `;
 
 export const Textarea = styled.textarea`
