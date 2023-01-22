@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const FormWrapper = styled.div`
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+`;
+
 export const MyForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -8,7 +14,7 @@ export const MyForm = styled.form`
   width: 400px;
   padding: 10px;
   border-radius: 7px;
-  height: 550px;
+  height: 570px;
   background-color: #ccd0c3;
 `;
 
@@ -16,7 +22,7 @@ export const ButtonSubmit = styled.button`
   position: relative;
   transition: background 550ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 150px;
-  padding: 10px;
+  height: 35px;
   border-radius: 5px;
   font-weight: bold;
   font-size: 18px;

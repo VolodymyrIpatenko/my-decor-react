@@ -12,20 +12,24 @@ import {
   Textarea,
   Input,
   LabelText,
+  FormWrapper,
 } from './Contacts.styled';
 
-const style = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  margin: '100px',
-};
+function useInput(defaultValue) {
+  const [value, setValue] = useState((defaultValue = ''));
+
+  const handleValue = e => {
+    setValue(e.targetTarget.value);
+  };
+
+  return [value, setValue, handleValue];
+}
 
 const Contacts = () => {
-  const [name, setName] = useState('');
+  const [name, setName] = useInput('');
   const [email, setEmailError] = useState('');
-  const [message, setMessage] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
+  const [message, setMessage] = useInput('');
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const values =
     name === '' || email === '' || message === '' || email !== 'Valid Email :)';
@@ -41,20 +45,7 @@ const Contacts = () => {
   };
 
   const handleModal = () => {
-    setModalOpen(!modalOpen);
-  };
-
-  const ManageValues = e => {
-    switch (e.currentTarget.name) {
-      case 'name':
-        setName(e.currentTarget.value);
-        break;
-      case 'message':
-        setMessage(e.currentTarget.value);
-        break;
-      default:
-        throw new Error('something went wrong');
-    }
+    setModalOpen(prevState => !prevState);
   };
 
   function sendEmail(e) {
@@ -81,7 +72,7 @@ const Contacts = () => {
 
   return (
     <>
-      <div style={style}>
+      <FormWrapper>
         <MyForm onSubmit={sendEmail}>
           <h1>CONTACT US</h1>
           <LabelText>
@@ -89,7 +80,7 @@ const Contacts = () => {
             <Input
               type="text"
               placeholder="Name"
-              onChange={ManageValues}
+              onChange={setName}
               name="name"
             />
           </LabelText>
@@ -114,7 +105,7 @@ const Contacts = () => {
             <p>Message</p>
             <Textarea
               placeholder="Type your message"
-              onChange={ManageValues}
+              onChange={setMessage}
               name="message"
             />
           </LabelText>
@@ -125,9 +116,9 @@ const Contacts = () => {
           >
             {values ? 'Fill all the fields' : 'Submit'}
           </ButtonSubmit>
-          {modalOpen ? <Modal /> : null}
+          {isModalOpen ? <Modal /> : null}
         </MyForm>
-      </div>
+      </FormWrapper>
       <PageFooter />
     </>
   );
