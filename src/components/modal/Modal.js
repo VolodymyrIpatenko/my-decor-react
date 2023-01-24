@@ -2,10 +2,10 @@ import React from 'react';
 import Backdrop from './Backdrop';
 import './App.css';
 
-function Modal({ closeModal }) {
+function Modal({ onClose }) {
   return (
-    <Backdrop closeModal={closeModal}>
-      <div className="modal" onClick={e => e.stopPropagation()}>
+    <Backdrop>
+      <div className="modal">
         <p>
           Thank you for contacting as! We will try to respond as soon as
           possible

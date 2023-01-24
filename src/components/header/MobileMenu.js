@@ -1,22 +1,18 @@
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { Link, InstaIcon, MobileMenu } from './Header.styled';
-import { useState } from 'react';
 import { Breakpoint } from 'react-socks';
+import useToggle from '../customToggle/CustomToggle';
 
 export default function MobileMenuComponent() {
-  const [mobileMenu, setMobileMenu] = useState(false);
-
-  const onHandleShowMenu = () => {
-    setMobileMenu(prevState => !prevState);
-  };
+  const [isOpenMobileMenu, setMobileMenuToggle] = useToggle(false);
 
   return (
     <MobileMenu>
       <Breakpoint small down>
-        <GiHamburgerMenu onClick={() => onHandleShowMenu()}></GiHamburgerMenu>
+        <GiHamburgerMenu onClick={setMobileMenuToggle.toggle}></GiHamburgerMenu>
       </Breakpoint>
-      {mobileMenu ? (
+      {isOpenMobileMenu ? (
         <MobileMenu>
           <Link
             className={({ isActive }) => (isActive ? 'active' : null)}

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Modal from '../modal/Modal.js';
 import '../modal/App.css';
 import '../modal/App.css';
+import useToggle from '../customToggle/CustomToggle.js';
 import emailjs from 'emailjs-com';
 import validator from 'validator';
 import {
@@ -29,23 +30,22 @@ const Contacts = () => {
   const [name, setName] = useInput('');
   const [email, setEmailError] = useState('');
   const [message, setMessage] = useInput('');
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useToggle(false);
 
   const values =
-    name === '' || email === '' || message === '' || email !== 'Valid Email :)';
+    name === '' ||
+    email === '' ||
+    message === '' ||
+    email === 'Enter valid Email!';
 
   const validateEmail = e => {
     const email = e.target.value;
 
     if (validator.isEmail(email)) {
-      setEmailError('Valid Email :)');
+      setEmailError('Valid email');
     } else {
       setEmailError('Enter valid Email!');
     }
-  };
-
-  const handleModal = () => {
-    setModalOpen(prevState => !prevState);
   };
 
   function sendEmail(e) {
@@ -62,7 +62,7 @@ const Contacts = () => {
         result => {
           setTimeout(() => {
             window.location.reload();
-          }, 5000);
+          }, 4000);
         },
         error => {
           console.log(error.text);
@@ -112,7 +112,7 @@ const Contacts = () => {
           <ButtonSubmit
             disabled={values ? true : false}
             type="submit"
-            onClick={handleModal}
+            onClick={setModalOpen.toggle}
           >
             {values ? 'Fill all the fields' : 'Submit'}
           </ButtonSubmit>
