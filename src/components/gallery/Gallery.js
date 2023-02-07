@@ -1,5 +1,4 @@
-import PageFooter from '../footer/Footer.js';
-import { Title, Main } from 'components/home/Home.styled.js';
+import { Main } from 'components/home/Home.styled.js';
 import GalleryList from './Gallery.styled';
 import Typed from 'react-typed';
 
@@ -34,7 +33,6 @@ const Gallery = ({ photoGallery }) => {
           })}
         </GalleryList>
       </Main>
-      <PageFooter />
     </>
   );
 };

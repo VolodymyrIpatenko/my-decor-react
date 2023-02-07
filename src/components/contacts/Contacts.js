@@ -1,10 +1,9 @@
-import PageFooter from '../footer/Footer.js';
 import React from 'react';
 import { useState } from 'react';
 import Modal from '../modal/Modal.js';
 import '../modal/App.css';
 import '../modal/App.css';
-import useToggle from '../customToggle/CustomToggle.js';
+import { useToggle, useInput } from '../customHooks/CustomHooks.js';
 import emailjs from 'emailjs-com';
 import validator from 'validator';
 import {
@@ -15,16 +14,6 @@ import {
   LabelText,
   FormWrapper,
 } from './Contacts.styled';
-
-function useInput(defaultValue) {
-  const [value, setValue] = useState((defaultValue = ''));
-
-  const handleValue = e => {
-    setValue(e.targetTarget.value);
-  };
-
-  return [value, setValue, handleValue];
-}
 
 const Contacts = () => {
   const [name, setName] = useInput('');
@@ -119,7 +108,6 @@ const Contacts = () => {
           {isModalOpen ? <Modal /> : null}
         </MyForm>
       </FormWrapper>
-      <PageFooter />
     </>
   );
 };

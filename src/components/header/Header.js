@@ -4,12 +4,11 @@ import { Header, Link, Nav, Wrap, InstaIcon, Logo } from './Header.styled';
 import MobileMenuComponent from './MobileMenu.js';
 import './header.css';
 
-export const HeaderComponent = () => {
+const HeaderComponent = () => {
   return (
     <>
       <Header>
         <Logo href="/">Decor-Boutique</Logo>
-
         <Wrap>
           <Nav>
             <Link
@@ -21,7 +20,6 @@ export const HeaderComponent = () => {
             <Link to="/gallery">Gallery</Link>
             <Link to="/contacts">Contacts</Link>
           </Nav>
-
           <div>
             <InstaIcon
               target="_blank"
@@ -37,3 +35,5 @@ export const HeaderComponent = () => {
     </>
   );
 };
+
+export default HeaderComponent;

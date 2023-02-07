@@ -6,12 +6,12 @@ import Rental from './components/rental/Rental.js';
 import Gallery from './components/gallery/Gallery.js';
 import galleryCollection from './components/gallery/gallery.json';
 import rentalList from './components/rental/rental.json';
-import { HeaderComponent } from './components/header/Header.js';
+import SharedLayout from './components/layout/Layout.js';
 
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<HeaderComponent />}>
+      <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
         <Route
           path="/rental-collection"

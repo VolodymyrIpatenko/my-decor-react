@@ -1,5 +1,4 @@
 import { Img, Main, Description, Title } from './Home.styled';
-import PageFooter from '../footer/Footer.js';
 
 const Home = () => {
   return (
@@ -20,7 +19,6 @@ const Home = () => {
         </Description>
         <Img src={require('./main.jpg')} alt="wedding" loading="lazy" />
       </Main>
-      <PageFooter />
     </>
   );
 };

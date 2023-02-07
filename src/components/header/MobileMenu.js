@@ -2,7 +2,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { Link, InstaIcon, MobileMenu } from './Header.styled';
 import { Breakpoint } from 'react-socks';
-import useToggle from '../customToggle/CustomToggle';
+import { useToggle } from '../customHooks/CustomHooks';
 
 export default function MobileMenuComponent() {
   const [isOpenMobileMenu, setMobileMenuToggle] = useToggle(false);

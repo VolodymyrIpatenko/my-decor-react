@@ -1,4 +1,3 @@
-import PageFooter from '../footer/Footer.js';
 import { Description, Main } from 'components/home/Home.styled.js';
 import { RentalList } from './Rental.styled';
 import Typed from 'react-typed';
@@ -66,7 +65,6 @@ const Rental = ({ rentalCollection }) => {
           })}
         </RentalList>
       </Main>
-      <PageFooter />
     </>
   );
 };
