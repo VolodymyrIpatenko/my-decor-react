@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-
 import Contacts from './components/contacts/Contacts.js';
 import Home from './components/home/Home.js';
 import Rental from './components/rental/Rental.js';
