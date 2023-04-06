@@ -2,7 +2,6 @@ import { SlSocialInstagram } from 'react-icons/sl';
 import { Outlet } from 'react-router-dom';
 import { Header, Link, Nav, Wrap, InstaIcon, Logo } from './Header.styled';
 import MobileMenuComponent from './MobileMenu.js';
-import './header.css';
 
 const HeaderComponent = () => {
   return (
