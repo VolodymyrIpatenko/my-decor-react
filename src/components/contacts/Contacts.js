@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../modal/Modal.js';
-import { useToggle } from '../customHooks/CustomHooks.js';
+import { useToggle } from '../../customHooks/CustomHooks.js';
 import validator from 'validator';
 import {
   MyForm,
