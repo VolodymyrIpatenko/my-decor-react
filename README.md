@@ -6,9 +6,9 @@ Layout supports mobile version up to 478 and desktop up to 1440 versions
 
 ### The tech stack is:
 
-- React
-- React Routing
-- Styled components
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [ReactJS](https://reactjs.org/)
+- Stylling:[Styled-Components](https://styled-components.com/)
 
 
 ### Author
