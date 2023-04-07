@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './App.css';
+import { BackdropComponent } from './Backdrop.styled';
 
 export default function Backdrop({ children, closeModal }) {
   return ReactDOM.createPortal(
-    <div className="backdrop" onClick={closeModal}>
-      {children}
-    </div>,
+    <BackdropComponent onClick={closeModal}>{children}</BackdropComponent>,
     document.getElementById('portal')
   );
 }

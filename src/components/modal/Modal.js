@@ -1,16 +1,16 @@
 import React from 'react';
 import Backdrop from './Backdrop';
-import './App.css';
+import { ModalComponent } from './Backdrop.styled.js';
 
 function Modal({ onClose }) {
   return (
     <Backdrop>
-      <div className="modal">
+      <ModalComponent>
         <p>
           Thank you for contacting as! We will try to respond as soon as
           possible
         </p>
-      </div>
+      </ModalComponent>
     </Backdrop>
   );
 }

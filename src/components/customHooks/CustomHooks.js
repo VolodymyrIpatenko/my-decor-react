@@ -10,13 +10,3 @@ export const useToggle = defaultValue => {
     },
   ];
 };
-
-export const useInput = defaultValue => {
-  const [value, setValue] = useState((defaultValue = ''));
-
-  const handleValue = e => {
-    setValue(e.targetTarget.value);
-  };
-
-  return [value, setValue, handleValue];
-};

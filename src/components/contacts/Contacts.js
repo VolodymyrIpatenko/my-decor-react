@@ -1,10 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from '../modal/Modal.js';
-import '../modal/App.css';
-import '../modal/App.css';
-import { useToggle, useInput } from '../customHooks/CustomHooks.js';
-import emailjs from 'emailjs-com';
+import { useToggle } from '../customHooks/CustomHooks.js';
 import validator from 'validator';
 import {
   MyForm,
@@ -14,18 +10,26 @@ import {
   LabelText,
   FormWrapper,
 } from './Contacts.styled';
+import sendEmail from '../../utils/SubmitFunction.js';
 
 const Contacts = () => {
-  const [name, setName] = useInput('');
   const [email, setEmailError] = useState('');
-  const [message, setMessage] = useInput('');
+  const [userData, setUserData] = useState({
+    name: '',
+    message: '',
+  });
   const [isModalOpen, setModalOpen] = useToggle(false);
+  const { name, message } = userData;
 
   const values =
     name === '' ||
     email === '' ||
     message === '' ||
     email === 'Enter valid Email!';
+
+  const handleUserValue = e => {
+    setUserData(state => ({ ...state, [e.target.name]: e.target.value }));
+  };
 
   const validateEmail = e => {
     const email = e.target.value;
@@ -37,28 +41,6 @@ const Contacts = () => {
     }
   };
 
-  function sendEmail(e) {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        'service_08bxowc',
-        'template_wzku9hr',
-        e.target,
-        '3SDHZ_wnfkYeO2bfX'
-      )
-      .then(
-        result => {
-          setTimeout(() => {
-            window.location.reload();
-          }, 4000);
-        },
-        error => {
-          console.log(error.text);
-        }
-      );
-  }
-
   return (
     <>
       <FormWrapper>
@@ -69,7 +51,7 @@ const Contacts = () => {
             <Input
               type="text"
               placeholder="Name"
-              onChange={setName}
+              onChange={handleUserValue}
               name="name"
             />
           </LabelText>
@@ -94,7 +76,7 @@ const Contacts = () => {
             <p>Message</p>
             <Textarea
               placeholder="Type your message"
-              onChange={setMessage}
+              onChange={handleUserValue}
               name="message"
             />
           </LabelText>

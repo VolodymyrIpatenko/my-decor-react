@@ -1,4 +1,6 @@
-.backdrop {
+import styled from 'styled-components';
+
+export const BackdropComponent = styled.div`
   display: grid;
   place-content: center;
   position: absolute;
@@ -8,9 +10,9 @@
   height: 130vh;
   z-index: 1;
   background: #000000e1;
-}
+`;
 
-.modal {
+export const ModalComponent = styled.div`
   width: 400px;
   height: 400px;
   display: grid;
@@ -21,4 +23,4 @@
   background-color: #ccd0c3;
   color: white;
   font-size: 22px;
-}
+`;

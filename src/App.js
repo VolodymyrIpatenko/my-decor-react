@@ -3,8 +3,8 @@ import Contacts from './components/contacts/Contacts.js';
 import Home from './components/home/Home.js';
 import Rental from './components/rental/Rental.js';
 import Gallery from './components/gallery/Gallery.js';
-import galleryCollection from './components/gallery/gallery.json';
-import rentalList from './components/rental/rental.json';
+import galleryCollection from './common/data/gallery.json';
+import rentalList from './common/data/rental.json';
 import SharedLayout from './components/layout/Layout.js';
 
 export const App = () => {

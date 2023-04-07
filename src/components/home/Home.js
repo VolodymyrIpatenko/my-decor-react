@@ -17,7 +17,11 @@ const Home = () => {
           other pages on our website to check out our rental collection and see
           what we are up to.
         </Description>
-        <Img src={require('./main.jpg')} alt="wedding" loading="lazy" />
+        <Img
+          src={require('../../common/images/main.jpg')}
+          alt="wedding"
+          loading="lazy"
+        />
       </Main>
     </>
   );
